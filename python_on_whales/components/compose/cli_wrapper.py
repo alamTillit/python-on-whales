@@ -139,6 +139,7 @@ class ComposeCLI(DockerCLICaller):
         """
         full_cmd = self.docker_compose_cmd + ["config", "--format", "json"]
         result = run(full_cmd, capture_stdout=True)
+        print(result)
         if return_json:
             return json.loads(result)
         else:
